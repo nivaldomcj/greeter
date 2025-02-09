@@ -9,9 +9,8 @@ new Elysia()
   .use(swagger())
   // OK...
   .get("/", () => "OK")
-  // ...GO!
+  // ...GO
   .listen(ENV.PORT, (server) => {
-    console.log(
-      `🤝 Greeter is greeting at http://${server?.hostname}:${server?.port}`
-    );
+    const url = `http://${server?.hostname}:${server?.port}`;
+    console.log(`🤝 Greeter is greeting at ${url}`);
   });
