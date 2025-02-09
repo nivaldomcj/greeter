@@ -6,7 +6,14 @@ const envSchema = z.object({
   PORT: z.string().optional().default("3000"),
 
   // Database
-  DATABASE_URL: z.string().nonempty(),
+  DATABASE_URL: z.string(),
+
+  // Email
+  MAIL_HOST: z.string(),
+  MAIL_PORT: z.number(),
+  MAIL_USER: z.string(),
+  MAIL_PASS: z.string(),
+  MAIL_FROM: z.string(),
 });
 
 export const ENV = envSchema.parse(process.env);
