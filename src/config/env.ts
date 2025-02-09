@@ -10,7 +10,7 @@ const envSchema = z.object({
 
   // Email
   MAIL_HOST: z.string(),
-  MAIL_PORT: z.number(),
+  MAIL_PORT: z.string().transform((val) => Number(val)),
   MAIL_USER: z.string(),
   MAIL_PASS: z.string(),
   MAIL_FROM: z.string(),
