@@ -1,5 +1,8 @@
 import { swagger } from "@elysiajs/swagger";
+import { ENV, validateEnv } from "config/env";
 import { Elysia } from "elysia";
+
+validateEnv();
 
 new Elysia()
   // Swagger
@@ -7,8 +10,8 @@ new Elysia()
   // OK...
   .get("/", () => "OK")
   // ...GO!
-  .listen(3000, (server) => {
+  .listen(ENV.PORT, (server) => {
     console.log(
-      `🦊 Elysia is running at http://${server?.hostname}:${server?.port}`
+      `🤝 Greeter is greeting at http://${server?.hostname}:${server?.port}`
     );
   });

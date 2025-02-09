@@ -1,16 +1,25 @@
 {
-  "name": "app",
-  "version": "1.0.50",
+  "name": "greeter",
+  "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "db:push": "drizzle-kit push",
+    "db:migrate": "drizzle-kit migrate",
+    "db:generate": "drizzle-kit generate",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@elysiajs/swagger": "^1.2.0",
-    "elysia": "latest"
+    "@elysiajs/swagger": "1.2.0",
+    "drizzle-orm": "0.39.2",
+    "drizzle-typebox": "0.3.0",
+    "elysia": "1.2.12",
+    "postgres": "3.4.5",
+    "zod": "3.24.1",
+    "zod-error": "1.5.0"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "1.2.2",
+    "drizzle-kit": "0.30.4"
   },
-  "module": "src/index.js"
+  "module": "src/index.ts"
 }
