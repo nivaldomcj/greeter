@@ -6,13 +6,15 @@
     "db:push": "drizzle-kit push",
     "db:migrate": "drizzle-kit migrate",
     "db:generate": "drizzle-kit generate",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "inngest:dev": "inngest-cli dev"
   },
   "dependencies": {
     "@elysiajs/swagger": "1.2.0",
     "drizzle-orm": "0.39.2",
     "drizzle-typebox": "0.3.0",
     "elysia": "1.2.12",
+    "inngest": "3.31.6",
     "nodemailer": "6.10.0",
     "postgres": "3.4.5",
     "zod": "3.24.1",
@@ -21,7 +23,11 @@
   "devDependencies": {
     "@types/nodemailer": "6.4.17",
     "bun-types": "1.2.2",
-    "drizzle-kit": "0.30.4"
+    "drizzle-kit": "0.30.4",
+    "inngest-cli": "1.4.6"
   },
+  "trustedDependencies": [
+    "inngest-cli"
+  ],
   "module": "src/index.ts"
 }

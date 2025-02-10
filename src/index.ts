@@ -3,6 +3,7 @@ import { ENV, validateEnv } from "config/env";
 import { setup } from "config/setup";
 import { greetController } from "controllers/greetController";
 import { Elysia } from "elysia";
+import { inngestController } from "inngest/controller";
 
 validateEnv();
 
@@ -11,6 +12,8 @@ new Elysia()
   .use(setup)
   // Controllers
   .use(greetController)
+  // Inngest
+  .use(inngestController)
   // Swagger
   .use(swagger())
   // OK...

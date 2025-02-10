@@ -11,8 +11,8 @@ export const greetController = new Elysia()
   // Routes
   .post(
     "/greet",
-    async ({ body, database, mailer }) => {
-      return await GreetService.greet({ body, database, mailer });
+    async ({ body, database, inngest }) => {
+      return await GreetService.greet({ body, database, inngest });
     },
     {
       body: "greet.request",

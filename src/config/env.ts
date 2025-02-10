@@ -9,11 +9,15 @@ const envSchema = z.object({
   DATABASE_URL: z.string(),
 
   // Email
-  MAIL_HOST: z.string(),
+  // TIP: Use ethereal mail for testing
+  MAIL_HOST: z.string().default("smtp.ethereal.email"),
   MAIL_PORT: z.string().transform((val) => Number(val)),
   MAIL_USER: z.string(),
   MAIL_PASS: z.string(),
   MAIL_FROM: z.string(),
+
+  // Inngest
+  CLIENT_ID: z.string().default("greeter"),
 });
 
 export const ENV = envSchema.parse(process.env);
